@@ -34,5 +34,6 @@ print "prediction time:", round(time() - prediction_start_time, 3), "s"
 
 accuracy = accuracy_score(labels_test, predictions)
 print accuracy
+# In local runs, the training time is ~0.7s, the prediction one is ~0.09s and the accuracy is 0.973265.
 
 
