@@ -10,11 +10,9 @@ def outlierCleaner(predictions, ages, net_worths):
         Return a list of tuples named cleaned_data where 
         each tuple is of the form (age, net_worth, error).
     """
-    
-    cleaned_data = []
-
-    ### your code goes here
-
-    
+    assert len(predictions) == len(ages) == len(net_worths)
+    features_with_error = [(ages[index], net_worths[index], abs(predictions[index] - net_worths[index])) for index in range(0, len(predictions))]
+    features_with_error.sort(key = lambda (age, net_worth, error): error)
+    cleaned_data = features_with_error[:81]
     return cleaned_data
 
